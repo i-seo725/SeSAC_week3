@@ -15,6 +15,7 @@
 		F4553CF42A71FFF9007E9129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4553CF22A71FFF9007E9129 /* LaunchScreen.storyboard */; };
 		F4553CFC2A720FEE007E9129 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4553CFB2A720FEE007E9129 /* TodoTableViewController.swift */; };
 		F4553CFE2A7232D5007E9129 /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4553CFD2A7232D5007E9129 /* StudyTableViewController.swift */; };
+		F4553D002A72496B007E9129 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4553CFF2A72496B007E9129 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F4553CF52A71FFF9007E9129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4553CFB2A720FEE007E9129 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		F4553CFD2A7232D5007E9129 /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = "<group>"; };
+		F4553CFF2A72496B007E9129 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		F4553CE62A71FFF8007E9129 /* SeSAC_week3 */ = {
 			isa = PBXGroup;
 			children = (
+				F4553CFF2A72496B007E9129 /* Extension.swift */,
 				F4553CFD2A7232D5007E9129 /* StudyTableViewController.swift */,
 				F4553CFB2A720FEE007E9129 /* TodoTableViewController.swift */,
 				F4553CE72A71FFF8007E9129 /* AppDelegate.swift */,
@@ -147,6 +150,7 @@
 				F4553CEC2A71FFF8007E9129 /* ViewController.swift in Sources */,
 				F4553CFC2A720FEE007E9129 /* TodoTableViewController.swift in Sources */,
 				F4553CFE2A7232D5007E9129 /* StudyTableViewController.swift in Sources */,
+				F4553D002A72496B007E9129 /* Extension.swift in Sources */,
 				F4553CE82A71FFF8007E9129 /* AppDelegate.swift in Sources */,
 				F4553CEA2A71FFF8007E9129 /* SceneDelegate.swift in Sources */,
 			);

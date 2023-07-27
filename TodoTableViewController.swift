@@ -34,8 +34,7 @@ class TodoTableViewController: UITableViewController {
         //내용이 남아있어서 else 안 쓰면 첫번째~세번째 텍스트가 스크롤 넘기면 다시 나타남, 재사용 메커니즘 때문
         cell.textLabel?.text = todoList[indexPath.row]
         
-        cell.textLabel?.textColor = .systemPurple
-        cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+        cell.textLabel?.configureTitleText()
         
         cell.detailTextLabel?.text = "디테일 텍스트"
         cell.detailTextLabel?.textColor = .systemMint
@@ -53,6 +52,7 @@ class TodoTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
+        showAlert()
         //1. 리스트에 내용 추가
         todoList.append("씻기")
         print(todoList)
