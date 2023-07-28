@@ -19,6 +19,7 @@ class SettingTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitle.count
+//        sectionTitle.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -40,12 +40,15 @@ class AppendTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func plusButtonTapped(_ sender: Any) {
+    @IBAction func plusButtonTapped(_ sender: UIButton) {
         guard let newKeyword = keywordTextField.text else {
             return
         }
-        todoList.append(newKeyword)
-        tableView.reloadData()
+        
+        if newKeyword != "" {
+            todoList.append(newKeyword)
+            keywordTextField.text = ""
+            tableView.reloadData()
+        }
     }
-    
 }
