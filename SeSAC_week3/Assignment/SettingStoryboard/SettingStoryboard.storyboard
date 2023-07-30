@@ -303,7 +303,8 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                     <connections>
-                                                        <action selector="likeButtonTapped:" destination="WxF-M5-H6F" eventType="touchUpInside" id="dtJ-Kx-ZG2"/>
+                                                        <action selector="likeButtonTapped:" destination="sal-4S-hZZ" eventType="touchUpInside" id="EbB-jP-1fo"/>
+                                                        <action selector="likeButtonTapped:" destination="WxF-M5-H6F" eventType="touchUpInside" id="lJt-0M-lEn"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

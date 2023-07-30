@@ -46,16 +46,10 @@ class AppendTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTodoTableViewCell")! as! ShoppingTodoTableViewCell
         
         let row = list[indexPath.row]
-        cell.todoLabel.text = row.myTodo
-        cell.checkBoxImageView.image = row.done == true ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
-        
-        let likeImage = row.like == true ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
-        cell.likeButton.setImage(likeImage, for: .normal)
-        cell.likeButton.setTitle("", for: .normal)
+        cell.configCell(row: row)
         
         return cell
     }
-
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         guard let newKeyword = keywordTextField.text else {

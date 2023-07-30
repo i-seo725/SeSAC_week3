@@ -14,5 +14,15 @@ class ShoppingTodoTableViewCell: UITableViewCell {
     @IBOutlet var todoLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
+    func configCell(row: MyTodo) {
+        todoLabel.text = row.myTodo
+        checkBoxImageView.image = row.done == true ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
+        
+        let likeImage = row.like == true ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        likeButton.setImage(likeImage, for: .normal)
+        likeButton.setTitle("", for: .normal)
+    }
+    
+    
     
 }
