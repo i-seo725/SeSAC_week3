@@ -7,13 +7,23 @@
 
 import UIKit
 
+struct MyTodo {
+    let myTodo: String
+    let done: Bool
+    let like: Bool
+}
+
+var list = [MyTodo(myTodo: "그립톡 구매하기", done: true, like: false),
+MyTodo(myTodo: "사이다 구매", done: false, like: true),
+MyTodo(myTodo: "아이패드 케이스 최저가 찾기", done: false, like: true),
+MyTodo(myTodo: "양말 사기", done: true, like: false)]
+
 class AppendTableViewController: UITableViewController {
 
     @IBOutlet var keywordTextField: UITextField!
     @IBOutlet var addButton: UIButton!
     
-    var todoList = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"]
-    
+    var todoList: MyTodo
     override func viewDidLoad() {
         super.viewDidLoad()
         designSetting()
@@ -29,12 +39,12 @@ class AppendTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoList.count
+        return list.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell")!
-        cell.textLabel?.text = todoList[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row]
         
         cell.imageView?.image = indexPath.row != 0 ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "checkmark.square.fill")
         return cell
@@ -46,7 +56,7 @@ class AppendTableViewController: UITableViewController {
         }
         
         if newKeyword != "" {
-            todoList.append(newKeyword)
+            list.append(MyTodo(myTodo: keywordTextField.text, done: false, like: false))
             keywordTextField.text = ""
             tableView.reloadData()
         }
