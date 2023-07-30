@@ -268,7 +268,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="54" id="sal-4S-hZZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTodoTableViewCell" rowHeight="54" id="sal-4S-hZZ" customClass="ShoppingTodoTableViewCell" customModule="SeSAC_week3" customModuleProvider="target">
                                 <rect key="frame" x="20" y="156.33333206176758" width="353" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sal-4S-hZZ" id="mAq-jl-hbn">
@@ -285,15 +285,8 @@
                                                         <constraint firstAttribute="height" constant="38" id="y58-1U-xGy"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYF-OS-5EK">
-                                                    <rect key="frame" x="303" y="4" width="38" height="38"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="38" id="abt-Jz-YB5"/>
-                                                        <constraint firstAttribute="width" secondItem="fYF-OS-5EK" secondAttribute="height" multiplier="1:1" id="nkl-Vk-7Ja"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-Ew-eA9">
-                                                    <rect key="frame" x="50" y="4" width="245" height="38"/>
+                                                    <rect key="frame" x="50" y="4" width="41.333333333333343" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="Hnt-ef-96q"/>
                                                     </constraints>
@@ -301,16 +294,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWE-jA-Bf5">
+                                                    <rect key="frame" x="303" y="4" width="38" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="WWE-jA-Bf5" secondAttribute="height" multiplier="1:1" id="GJ3-Ae-wI0"/>
+                                                        <constraint firstAttribute="height" constant="38" id="ZJ8-v9-EcY"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="WxF-M5-H6F" eventType="touchUpInside" id="dtJ-Kx-ZG2"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                                             <constraints>
                                                 <constraint firstItem="ZjP-Ew-eA9" firstAttribute="centerY" secondItem="L3C-bj-ynh" secondAttribute="centerY" id="1dF-YX-476"/>
-                                                <constraint firstAttribute="trailing" secondItem="fYF-OS-5EK" secondAttribute="trailing" constant="4" id="K6D-6a-mwW"/>
                                                 <constraint firstItem="HJM-xV-FL9" firstAttribute="leading" secondItem="L3C-bj-ynh" secondAttribute="leading" constant="4" id="LjY-El-S6h"/>
-                                                <constraint firstItem="fYF-OS-5EK" firstAttribute="centerY" secondItem="L3C-bj-ynh" secondAttribute="centerY" id="MFz-hR-usc"/>
                                                 <constraint firstItem="ZjP-Ew-eA9" firstAttribute="leading" secondItem="HJM-xV-FL9" secondAttribute="trailing" constant="8" id="bWO-Wv-DiQ"/>
-                                                <constraint firstItem="fYF-OS-5EK" firstAttribute="leading" secondItem="ZjP-Ew-eA9" secondAttribute="trailing" constant="8" id="d6G-d8-w1J"/>
                                                 <constraint firstItem="HJM-xV-FL9" firstAttribute="centerY" secondItem="L3C-bj-ynh" secondAttribute="centerY" id="krH-tE-Mcc"/>
+                                                <constraint firstItem="WWE-jA-Bf5" firstAttribute="top" secondItem="L3C-bj-ynh" secondAttribute="top" constant="4" id="oFP-ib-yWf"/>
+                                                <constraint firstAttribute="trailing" secondItem="WWE-jA-Bf5" secondAttribute="trailing" constant="4" id="wcX-Gy-tuU"/>
                                                 <constraint firstItem="HJM-xV-FL9" firstAttribute="top" secondItem="L3C-bj-ynh" secondAttribute="top" constant="4" id="xj8-tt-srF"/>
                                             </constraints>
                                         </view>
@@ -323,6 +327,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="checkBoxImageView" destination="HJM-xV-FL9" id="H31-wu-TJL"/>
+                                    <outlet property="likeButton" destination="WWE-jA-Bf5" id="fjs-QS-jQb"/>
+                                    <outlet property="todoLabel" destination="ZjP-Ew-eA9" id="Kdp-Vq-J97"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

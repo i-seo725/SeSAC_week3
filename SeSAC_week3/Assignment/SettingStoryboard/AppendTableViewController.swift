@@ -14,16 +14,15 @@ struct MyTodo {
 }
 
 var list = [MyTodo(myTodo: "그립톡 구매하기", done: true, like: false),
-MyTodo(myTodo: "사이다 구매", done: false, like: true),
-MyTodo(myTodo: "아이패드 케이스 최저가 찾기", done: false, like: true),
-MyTodo(myTodo: "양말 사기", done: true, like: false)]
+            MyTodo(myTodo: "사이다 구매", done: false, like: true),
+            MyTodo(myTodo: "아이패드 케이스 최저가 찾기", done: false, like: true),
+            MyTodo(myTodo: "양말 사기", done: true, like: false)]
 
 class AppendTableViewController: UITableViewController {
-
+    
     @IBOutlet var keywordTextField: UITextField!
     @IBOutlet var addButton: UIButton!
     
-    var todoList: MyTodo
     override func viewDidLoad() {
         super.viewDidLoad()
         designSetting()
@@ -36,6 +35,7 @@ class AppendTableViewController: UITableViewController {
         addButton.tintColor = .black
         addButton.layer.backgroundColor = UIColor.systemGray5.cgColor
         addButton.layer.cornerRadius = 8
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,12 +43,19 @@ class AppendTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell")!
-        cell.textLabel?.text = list[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTodoTableViewCell")! as! ShoppingTodoTableViewCell
         
-        cell.imageView?.image = indexPath.row != 0 ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "checkmark.square.fill")
+        let row = list[indexPath.row]
+        cell.todoLabel.text = row.myTodo
+        cell.checkBoxImageView.image = row.done == true ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
+        
+        let likeImage = row.like == true ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        cell.likeButton.setImage(likeImage, for: .normal)
+        cell.likeButton.setTitle("", for: .normal)
+        
         return cell
     }
+
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         guard let newKeyword = keywordTextField.text else {
@@ -56,7 +63,8 @@ class AppendTableViewController: UITableViewController {
         }
         
         if newKeyword != "" {
-            list.append(MyTodo(myTodo: keywordTextField.text, done: false, like: false))
+            guard let text = keywordTextField.text else { return }
+            list.append(MyTodo(myTodo: text, done: false, like: false))
             keywordTextField.text = ""
             tableView.reloadData()
         }
