@@ -25,12 +25,8 @@ class MovieTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell") as! MovieTableViewCell
         
         let getMovieInfo = movieInformation.movie[indexPath.row]
-        cell.moviePosterImageView.image = UIImage(named: "\(getMovieInfo.title)")
-        cell.movieTitleLabel.text = getMovieInfo.title
-        cell.movieTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        cell.movieSubTitleLabel.text = "\(getMovieInfo.releaseDate) | \(getMovieInfo.runtime)분 | \(getMovieInfo.rate)점"
-        cell.movieSubTitleLabel.font = UIFont.systemFont(ofSize: 14)
-        cell.movieSummaryTextView.text = "\(getMovieInfo.overview)"
+        cell.configureMovieCell(row: getMovieInfo)
+        
         
         return cell
     }
