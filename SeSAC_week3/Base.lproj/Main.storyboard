@@ -349,9 +349,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="6Ox-WV-M5g">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="HYd-Lj-R4S" id="Y8E-lX-W8v"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomTableViewCell" rowHeight="99" id="Psn-uo-ws5" customClass="CustomTableViewCell" customModule="SeSAC_week3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="99"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Psn-uo-ws5" id="Fw4-rX-Jab">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="99"/>
@@ -435,6 +443,9 @@
                             <outlet property="delegate" destination="HYd-Lj-R4S" id="eKM-PR-cSR"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="6Ox-WV-M5g" id="KI0-gT-0hI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nf2-6A-1Ka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
